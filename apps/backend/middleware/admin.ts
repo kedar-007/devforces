@@ -1,5 +1,12 @@
 import type { Request,Response,NextFunction } from "express"
-export const adminMiddleware(req:Request,res:Response,next:NextFunction) => {
+
+interface NextRequest extends Request{
+    user:{
+        id:string,
+        username:string
+    }
+}
+export const adminMiddleware(req:NextRequest,res:Response,next:NextFunction) => {
 
 
 
